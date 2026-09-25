@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Sidebar from '../components/Sidebar'
 
-function MainLayout() {
+function MainLayout({ user, onLogout }) {
   const [collapsed, setCollapsed] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
 
@@ -30,10 +30,18 @@ function MainLayout() {
 
   return (
     <div className="app-shell">
-      <Navbar onToggleSidebar={handleToggleSidebar} />
+      <Navbar
+        user={user}
+        onLogout={onLogout}
+        onToggleSidebar={handleToggleSidebar}
+      />
 
       <div className="app-body">
-        <Sidebar className={sidebarClassName} onNavigate={closeMobileSidebar} />
+        <Sidebar
+          user={user}
+          className={sidebarClassName}
+          onNavigate={closeMobileSidebar}
+        />
 
         <main className="content">
           <Outlet />

@@ -1,7 +1,14 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import logo from '../assets/logo.svg'
 
-function Navbar({ onToggleSidebar }) {
+function Navbar({ user, onLogout, onToggleSidebar }) {
+  const navigate = useNavigate()
+
+  function handleLogout() {
+    onLogout()
+    navigate('/login')
+  }
+
   return (
     <header className="navbar">
       <button
@@ -22,7 +29,21 @@ function Navbar({ onToggleSidebar }) {
 
       <div className="navbar__spacer" />
 
-      <span className="navbar__user">Guest</span>
+      {user ? (
+        <div className="navbar__account">
+          <div className="navbar__identity">
+            <span className="navbar__name">{user.name}</span>
+            <span className="navbar__role">{user.role}</span>
+          </div>
+          <button type="button" className="btn btn--ghost" onClick={handleLogout}>
+            Log out
+          </button>
+        </div>
+      ) : (
+        <Link to="/login" className="btn btn--ghost">
+          Sign in
+        </Link>
+      )}
     </header>
   )
 }
