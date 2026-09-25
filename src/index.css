@@ -369,3 +369,338 @@ svg {
     padding: 20px 16px;
   }
 }
+
+/* 5. Navbar account ----------------------------------------- */
+.navbar__account {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.navbar__identity {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.25;
+}
+
+.navbar__name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.navbar__role {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  text-transform: capitalize;
+}
+
+/* 6. Auth (split-screen) ------------------------------------ */
+.auth {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+.auth__brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  color: #fff;
+  background: linear-gradient(140deg, #1e3a8a 0%, #2563eb 55%, #3b82f6 100%);
+}
+
+.auth__brand-inner {
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.auth__brand-title {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.auth__brand-text {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+}
+
+.auth__panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  background: var(--color-surface);
+}
+
+.auth__form {
+  width: 100%;
+  max-width: 380px;
+}
+
+.auth__title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.auth__subtitle {
+  color: var(--color-text-muted);
+  margin: 4px 0 24px;
+}
+
+.auth__demo {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px dashed var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.auth__demo-title {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.auth__demo code {
+  font-family: ui-monospace, Consolas, monospace;
+  background: var(--color-bg);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  .auth {
+    grid-template-columns: 1fr;
+  }
+
+  .auth__brand {
+    padding: 32px 24px;
+  }
+}
+
+/* 7. Welcome banner ----------------------------------------- */
+.welcome {
+  margin-bottom: 24px;
+}
+
+.welcome__title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.welcome__text {
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+/* 8. Stats --------------------------------------------------- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stats-grid--compact {
+  grid-template-columns: repeat(3, 1fr);
+  margin: 16px 0;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.stat-card__label {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.stat-card__value {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.stat-card__hint {
+  font-size: 12px;
+  color: var(--color-warning);
+  font-weight: 600;
+}
+
+/* 9. Dashboard layout --------------------------------------- */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.section-head__title {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.section-head__count {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.profile-list {
+  margin: 16px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.profile-list div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 10px;
+}
+
+.profile-list dt {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.profile-list dd {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: right;
+}
+
+/* 10. Table -------------------------------------------------- */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.table th {
+  text-align: left;
+  padding: 10px 12px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.table__strong {
+  display: block;
+  font-weight: 600;
+}
+
+.table__muted {
+  display: block;
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+/* 11. Status badges ----------------------------------------- */
+.badge--approved {
+  background: var(--color-success-soft);
+  color: var(--color-success);
+}
+
+.badge--pending {
+  background: #fff7ed;
+  color: var(--color-warning);
+}
+
+.badge--rejected {
+  background: var(--color-danger-soft);
+  color: var(--color-danger);
+}
+
+/* 12. States ------------------------------------------------- */
+.spinner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-text-muted);
+  padding: 24px 0;
+}
+
+.spinner__circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+  border-top-color: var(--color-primary);
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.empty-state {
+  padding: 36px 16px;
+  text-align: center;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+}
+
+.empty-state__title {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.empty-state__message {
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
