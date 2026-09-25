@@ -704,3 +704,25 @@ svg {
     grid-template-columns: 1fr;
   }
 }
+
+/* 13. Forms -------------------------------------------------- */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 16px;
+}
+
+.card--spaced {
+  margin-top: 20px;
+}
+
+@media (max-width: 640px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid,
+  .stats-grid--compact {
+    grid-template-columns: 1fr;
+  }
+}
