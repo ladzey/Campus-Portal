@@ -4,10 +4,8 @@ import StatCard from '../components/StatCard'
 import RegistrationTable from '../components/RegistrationTable'
 import EmptyState from '../components/EmptyState'
 import Spinner from '../components/Spinner'
-import { mockCourses } from '../data/mockCourses'
-import { mockRegistrations } from '../data/mockRegistrations'
 
-function Dashboard({ user }) {
+function Dashboard({ user, courses, registrations }) {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
@@ -34,9 +32,9 @@ function Dashboard({ user }) {
 
   if (role === 'administrator') {
     const totalStudents = new Set(
-      mockRegistrations.map((registration) => registration.studentId),
+      registrations.map((registration) => registration.studentId),
     ).size
-    const pendingCount = mockRegistrations.filter(
+    const pendingCount = registrations.filter(
       (registration) => registration.status === 'pending',
     ).length
 
@@ -51,9 +49,9 @@ function Dashboard({ user }) {
         </div>
 
         <div className="stats-grid">
-          <StatCard label="Course Offerings" value={mockCourses.length} />
+          <StatCard label="Course Offerings" value={courses.length} />
           <StatCard label="Students" value={totalStudents} />
-          <StatCard label="Registrations" value={mockRegistrations.length} />
+          <StatCard label="Registrations" value={registrations.length} />
           <StatCard label="Pending Approvals" value={pendingCount} hint="Needs review" />
         </div>
 
@@ -61,24 +59,24 @@ function Dashboard({ user }) {
           <div className="section-head">
             <h2 className="section-head__title">All Registrations</h2>
             <span className="section-head__count">
-              {mockRegistrations.length} records
+              {registrations.length} records
             </span>
           </div>
 
-          {mockRegistrations.length === 0 ? (
+          {registrations.length === 0 ? (
             <EmptyState
               title="No registrations yet"
               message="Registrations submitted by students will appear here."
             />
           ) : (
-            <RegistrationTable registrations={mockRegistrations} showStudent />
+            <RegistrationTable registrations={registrations} showStudent />
           )}
         </section>
       </div>
     )
   }
 
-  const myRegistrations = mockRegistrations.filter(
+  const myRegistrations = registrations.filter(
     (registration) => registration.studentId === user.studentId,
   )
   const myApproved = myRegistrations.filter(
