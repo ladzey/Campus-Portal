@@ -1,0 +1,48 @@
+// Hardcoded course registrations. Each record links a student to a course.
+export const mockRegistrations = [
+  {
+    id: 'r1',
+    studentId: 'CS2023001',
+    studentName: 'Andi Pratama',
+    courseCode: 'CS201',
+    courseTitle: 'Data Structures',
+    term: '2025/2026-1',
+    status: 'approved',
+  },
+  {
+    id: 'r2',
+    studentId: 'CS2023001',
+    studentName: 'Andi Pratama',
+    courseCode: 'CS210',
+    courseTitle: 'Discrete Mathematics',
+    term: '2025/2026-1',
+    status: 'pending',
+  },
+  {
+    id: 'r3',
+    studentId: 'CS2023002',
+    studentName: 'Bella Kusuma',
+    courseCode: 'CS301',
+    courseTitle: 'Design and Analysis of Algorithms',
+    term: '2025/2026-1',
+    status: 'approved',
+  },
+  {
+    id: 'r4',
+    studentId: 'CS2023002',
+    studentName: 'Bella Kusuma',
+    courseCode: 'CS302',
+    courseTitle: 'Database Systems',
+    term: '2025/2026-1',
+    status: 'rejected',
+  },
+  {
+    id: 'r5',
+    studentId: 'CS2023002',
+    studentName: 'Bella Kusuma',
+    courseCode: 'CS401',
+    courseTitle: 'Machine Learning',
+    term: '2025/2026-1',
+    status: 'pending',
+  },
+]
